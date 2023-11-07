@@ -1,0 +1,113 @@
+@import '../../styles/variables.scss';
+
+.card {
+    width: 423px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 15px 0px rgba(0, 161, 92, 0.15);
+    transition: .3s;
+    cursor: pointer;
+
+    @media (max-width: 1440px) {
+        width: 100%;
+    }
+
+    &:hover {
+        box-shadow: 0px 4px 15px 0px rgba(0, 161, 92, 0.35);
+
+        .image img {
+            transform: scale(1.1);
+        }
+    }
+
+    .image {
+        width: 100%;
+        flex: 0 1 269px;
+        height: 269px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            height: 269px;
+            transition: .7s;
+        }
+    }
+
+    .info {
+        padding: 24px 36px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .top {
+            margin-bottom: 24px;
+
+            .title {
+                color: $black;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: normal;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                margin-bottom: 3px;
+            }
+
+            .time {
+                color: $gray;
+                display: inline-block;
+                font-size: 20px;
+                line-height: 140%;
+                font-weight: 400;
+
+            }
+        }
+
+        .text {
+            font-size: 18px;
+            line-height: 127.778%;
+            margin-bottom: 42px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+
+            .author {
+                color: $gray;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 175%;
+            }
+
+            .vote {
+
+                svg {
+                    filter: none;
+                    transition: .3s;
+                }
+
+                &:hover {
+
+                    svg {
+                        filter: drop-shadow(0px 0px 5px $green);
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
